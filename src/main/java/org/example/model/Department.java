@@ -1,17 +1,18 @@
 package org.example.model;
 import java.util.List;
+import org.example.repository.UserToDepartmentRepository;
+import org.example.repository.impl.UserToDepartmentRepositoryImpl;
 
 /**
- * Department entity
+ * The Department where User work
+ * Relation:
  * Many To Many: Department <-> User
  */
 public class Department {
+    private static final UserToDepartmentRepository userToDepartmentRepository = UserToDepartmentRepositoryImpl.getInstance();
     private Long id;
     private String name;
     private List<User> userList;
-
-    public Department() {
-    }
 
     public Department(Long id, String name, List<User> userList) {
         this.id = id;
@@ -33,6 +34,7 @@ public class Department {
 
     public List<User> getUserList() {
         if (userList == null) {
+            userList = userToDepartmentRepository.findUsersByDepartmentId(this.id);
         }
         return userList;
     }
@@ -41,4 +43,3 @@ public class Department {
         this.userList = userList;
     }
 }
-
