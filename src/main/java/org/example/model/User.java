@@ -9,12 +9,15 @@ import java.util.List;
  * Many To One: User -> Role
  */
 public class User {
-    private long id;
+    private static final PhoneNumberRepository phoneNumberRepository = PhoneNumberRepositoryImpl.getInstance();
+    private static final UserToDepartmentRepository userToDepartmentRepository = UserToDepartmentRepositoryImpl.getInstance();
+    private Long id;
     private String firstName;
     private String lastName;
     private Role role;
     private List<PhoneNumber> phoneNumberList;
     private List<Department> departmentList;
+
     public User(Long id, String firstName, String lastName, Role role, List<PhoneNumber> phoneNumberList, List<Department> departmentList) {
         this.id = id;
         this.firstName = firstName;
@@ -23,6 +26,7 @@ public class User {
         this.phoneNumberList = phoneNumberList;
         this.departmentList = departmentList;
     }
+
     public Long getId() {
         return id;
     }
@@ -50,11 +54,13 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
-public List<PhoneNumber> getPhoneNumberList() {
-    if (phoneNumberList == null) {
+
+    public List<PhoneNumber> getPhoneNumberList() {
+        if (phoneNumberList == null) {
+            this.phoneNumberList = phoneNumberRepository.findAllByUserId(this.id);
+        }
+        return phoneNumberList;
     }
-    return phoneNumberList;
-}
 
     public void setPhoneNumberList(List<PhoneNumber> phoneNumberList) {
         this.phoneNumberList = phoneNumberList;
@@ -62,6 +68,7 @@ public List<PhoneNumber> getPhoneNumberList() {
 
     public List<Department> getDepartmentList() {
         if (departmentList == null) {
+            departmentList = userToDepartmentRepository.findDepartmentsByUserId(this.id);
         }
         return departmentList;
     }

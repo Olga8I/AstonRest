@@ -5,12 +5,11 @@ package org.example.model;
  * One To One: PhoneNumber - User
  */
 public class PhoneNumber {
+
     private Long id;
     private String number;
     private User user;
 
-    public PhoneNumber() {
-    }
 
     public PhoneNumber(Long id, String number, User user) {
         this.id = id;
@@ -28,13 +27,6 @@ public class PhoneNumber {
 
     public void setNumber(String number) {
         this.number = number;
-    }
-
-    public User getUser() {
-        if (user != null && user.getId() > 0 && user.getFirstName() == null) {
-
-        }
-        return user;
     }
 
     public void setUser(User user) {
