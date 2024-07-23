@@ -1,5 +1,9 @@
 package org.example.model;
 
+import org.example.repository.PhoneNumberRepository;
+import org.example.repository.UserToDepartmentRepository;
+import org.example.repository.impl.PhoneNumberRepositoryImpl;
+import org.example.repository.impl.UserToDepartmentRepositoryImpl;
 import java.util.List;
 
 /**
@@ -17,6 +21,9 @@ public class User {
     private Role role;
     private List<PhoneNumber> phoneNumberList;
     private List<Department> departmentList;
+
+    public User() {
+    }
 
     public User(Long id, String firstName, String lastName, Role role, List<PhoneNumber> phoneNumberList, List<Department> departmentList) {
         this.id = id;
@@ -77,4 +84,3 @@ public class User {
         this.departmentList = departmentList;
     }
 }
-

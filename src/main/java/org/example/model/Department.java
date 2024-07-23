@@ -1,8 +1,11 @@
 package org.example.model;
 import java.util.List;
+import org.example.repository.UserToDepartmentRepository;
+import org.example.repository.impl.UserToDepartmentRepositoryImpl;
 
 /**
- * Department entity
+ * The Department where User work
+ * Relation:
  * Many To Many: Department <-> User
  */
 public class Department {
@@ -40,4 +43,3 @@ public class Department {
         this.userList = userList;
     }
 }
-

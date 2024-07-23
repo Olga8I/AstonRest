@@ -25,6 +25,4 @@ public class DbServlet extends HttpServlet {
         printWriter.write(sb.toString());
         printWriter.flush();
     }
-
-
 }

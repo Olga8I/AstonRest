@@ -1,5 +1,4 @@
 package org.example.servlet.mapper.impl;
-
 import org.example.model.Role;
 import org.example.servlet.dto.RoleIncoming;
 import org.example.servlet.dto.RoleOutGoing;

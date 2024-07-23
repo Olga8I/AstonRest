@@ -1,5 +1,6 @@
 package org.example.servlet.mapper.impl;
 
+
 import org.example.model.User;
 import org.example.servlet.dto.UserIncoming;
 import org.example.servlet.dto.UserOutGoing;
@@ -70,3 +71,4 @@ public class UserDtoMapperImpl implements UserDtoMapper {
         return user.stream().map(this::map).toList();
     }
 }
+

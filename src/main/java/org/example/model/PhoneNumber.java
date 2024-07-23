@@ -1,11 +1,12 @@
 package org.example.model;
-
+import org.example.repository.UserRepository;
+import org.example.repository.impl.UserRepositoryImpl;
 /**
  * Phone entity
  * One To One: PhoneNumber - User
  */
 public class PhoneNumber {
-
+    private static final UserRepository userRepository = UserRepositoryImpl.getInstance();
     private Long id;
     private String number;
     private User user;
@@ -27,6 +28,15 @@ public class PhoneNumber {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public User getUser() {
+        if (user != null && user.getId() > 0 && user.getFirstName() == null) {
+            this.user = userRepository.findById(user.getId()).orElse(user);
+        } else if (user != null && user.getId() == 0) {
+            this.user = null;
+        }
+        return user;
     }
 
     public void setUser(User user) {
