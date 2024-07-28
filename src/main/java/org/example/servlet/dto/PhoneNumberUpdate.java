@@ -6,6 +6,8 @@ public class PhoneNumberUpdate {
     private String number;
     private Long userId;
 
+    public PhoneNumberUpdate() {
+    }
     public PhoneNumberUpdate(Long id, String number, Long userId) {
         this.id = id;
         this.number = number;
@@ -23,7 +25,6 @@ public class PhoneNumberUpdate {
     public Long getUserId() {
         return userId;
     }
-
 }
 
 

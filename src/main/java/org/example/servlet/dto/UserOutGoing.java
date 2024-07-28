@@ -11,7 +11,9 @@ public class UserOutGoing {
     private List<PhoneNumberOutGoing> phoneNumberList;
     private List<DepartmentOutGoing> departmentList;
 
+    public UserOutGoing() {
 
+    }
     public UserOutGoing(Long id, String firstName, String lastName, RoleOutGoing role, List<PhoneNumberOutGoing> phoneNumberList, List<DepartmentOutGoing> departmentList) {
         this.id = id;
         this.firstName = firstName;

@@ -7,6 +7,9 @@ public class DepartmentOutGoing {
     private String name;
     private List<UserSmallOutGoingDto> userList;
 
+    public DepartmentOutGoing() {
+
+    }
     public DepartmentOutGoing(Long id, String name, List<UserSmallOutGoingDto> userList) {
         this.id = id;
         this.name = name;

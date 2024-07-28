@@ -7,7 +7,9 @@ public class UserIncoming {
     private String lastName;
 
     private Role role;
+    public UserIncoming() {
 
+    }
     public UserIncoming(String firstName, String lastName, Role role) {
         this.firstName = firstName;
         this.lastName = lastName;

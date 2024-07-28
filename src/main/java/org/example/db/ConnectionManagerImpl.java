@@ -41,5 +41,4 @@ public final class ConnectionManagerImpl implements ConnectionManager {
                 PropertiesUtil.getProperties(PASSWORD_KEY)
         );
     }
-
 }

@@ -321,5 +321,4 @@ public class UserToDepartmentRepositoryImpl implements UserToDepartmentRepositor
         }
         return userDepartment;
     }
-
 }
