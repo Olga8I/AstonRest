@@ -102,7 +102,5 @@ public class DepartmentServiceImpl implements DepartmentService {
         } else {
             throw new NotFoundException("User not found.");
         }
-
     }
-
 }

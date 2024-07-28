@@ -14,6 +14,8 @@ public class Department {
     private String name;
     private List<User> userList;
 
+    public Department() {
+    }
     public Department(Long id, String name, List<User> userList) {
         this.id = id;
         this.name = name;

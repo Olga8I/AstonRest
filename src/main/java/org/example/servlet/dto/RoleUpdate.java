@@ -4,7 +4,9 @@ package org.example.servlet.dto;
 public class RoleUpdate {
     private Long id;
     private String name;
+    public RoleUpdate() {
 
+    }
     public RoleUpdate(Long id, String name) {
         this.id = id;
         this.name = name;

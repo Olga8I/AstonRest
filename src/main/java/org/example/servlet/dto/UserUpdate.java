@@ -9,7 +9,9 @@ public class UserUpdate {
     private RoleUpdate role;
     private List<PhoneNumberUpdate> phoneNumberList;
     private List<DepartmentUpdate> departmentList;
+    public UserUpdate() {
 
+    }
     public UserUpdate(Long id, String firstName, String lastName, RoleUpdate role, List<PhoneNumberUpdate> phoneNumberList, List<DepartmentUpdate> departmentList) {
         this.id = id;
         this.firstName = firstName;
@@ -42,7 +44,6 @@ public class UserUpdate {
     public List<DepartmentUpdate> getDepartmentList() {
         return departmentList;
     }
-
 }
 
 

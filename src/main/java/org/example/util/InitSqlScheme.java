@@ -16,10 +16,7 @@ public final class InitSqlScheme {
 
     static {
         loadInitSQL();
-    }
-
-    private InitSqlScheme() {
-    }
+   }
 
     public static void initSqlScheme(ConnectionManager connectionManager) {
         try (Connection connection = connectionManager.getConnection();
@@ -51,5 +48,4 @@ public final class InitSqlScheme {
             throw new IllegalStateException();
         }
     }
-
 }

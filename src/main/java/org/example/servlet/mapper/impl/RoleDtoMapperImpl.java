@@ -42,7 +42,6 @@ public class RoleDtoMapperImpl implements RoleDtoMapper {
                 role.getName()
         );
     }
-
     @Override
     public List<RoleOutGoing> map(List<Role> roleList) {
         return roleList.stream().map(this::map).toList();

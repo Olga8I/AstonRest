@@ -7,6 +7,9 @@ public class PhoneNumberOutGoing {
     @JsonProperty("user")
     private UserSmallOutGoingDto userDto;
 
+    public PhoneNumberOutGoing() {
+
+    }
     public PhoneNumberOutGoing(Long id, String number, UserSmallOutGoingDto userDto) {
         this.id = id;
         this.number = number;

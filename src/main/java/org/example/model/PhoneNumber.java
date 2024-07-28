@@ -11,7 +11,8 @@ public class PhoneNumber {
     private String number;
     private User user;
 
-
+    public PhoneNumber() {
+    }
     public PhoneNumber(Long id, String number, User user) {
         this.id = id;
         this.number = number;
