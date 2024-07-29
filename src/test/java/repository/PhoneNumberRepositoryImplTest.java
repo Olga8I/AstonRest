@@ -7,6 +7,7 @@ import com.github.dockerjava.api.model.Ports;
 import org.example.model.PhoneNumber;
 import org.example.repository.PhoneNumberRepository;
 
+import org.example.repository.impl.PhoneNumberRepositoryImpl;
 import org.example.util.PropertiesUtil;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -24,7 +25,7 @@ class PhoneNumberRepositoryImplTest {
     private static int containerPort = 5432;
     private static int localPort = 5432;
     @Container
-    public static PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:15-alpine")
+    public static PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:latest")
             .withDatabaseName("users_db")
             .withUsername(PropertiesUtil.getProperties("db.username"))
             .withPassword(PropertiesUtil.getProperties("db.password"))

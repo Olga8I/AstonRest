@@ -26,7 +26,7 @@ class RoleRepositoryImplTest {
     private static final int containerPort = 5432;
     private static final int localPort = 5432;
     @Container
-    public static PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:15-alpine")
+    public static PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:latest")
             .withDatabaseName("users_db")
             .withUsername(PropertiesUtil.getProperties("db.username"))
             .withPassword(PropertiesUtil.getProperties("db.password"))
